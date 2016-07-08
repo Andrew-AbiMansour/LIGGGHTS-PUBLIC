@@ -50,8 +50,8 @@ MPI_LIB =
 # LIB = name of FFT library
 
 FFT_INC =       -DFFT_FFTW3
-FFT_PATH = 
-FFT_LIB =	-lfftw
+FFT_PATH = 	-L/usr/lib64
+FFT_LIB =	-lfftw3f
 
 # JPEG and/or PNG library, OPTIONAL
 # see discussion in doc/Section_start.html#2_2 (step 7)
@@ -64,6 +64,11 @@ JPG_INC =
 JPG_PATH = 	
 JPG_LIB =	
 
+# VTK OPTIONAL
+VTK_LIB = -lvtkCommonCore -lvtkIOCore -lvtkCommonDataModel -lvtkIOXML -lvtkIOLegacy -lvtkIOParallel
+VTK_PATH = -L/usr/lib64/vtk
+VTK_INC = -DLAMMPS_VTK -I/usr/include/vtk
+
 # ---------------------------------------------------------------------
 # build rules and dependencies
 # no need to edit this section
@@ -71,9 +76,9 @@ JPG_LIB =
 include	Makefile.package.settings
 include	Makefile.package
 
-EXTRA_INC = $(LMP_INC) $(PKG_INC) $(MPI_INC) $(FFT_INC) $(JPG_INC) $(PKG_SYSINC)
-EXTRA_PATH = $(PKG_PATH) $(MPI_PATH) $(FFT_PATH) $(JPG_PATH) $(PKG_SYSPATH)
-EXTRA_LIB = $(PKG_LIB) $(MPI_LIB) $(FFT_LIB) $(JPG_LIB) $(PKG_SYSLIB)
+EXTRA_INC = $(LMP_INC) $(PKG_INC) $(MPI_INC) $(FFT_INC) $(JPG_INC) $(PKG_SYSINC) $(VTK_INC)
+EXTRA_PATH = $(PKG_PATH) $(MPI_PATH) $(FFT_PATH) $(JPG_PATH) $(PKG_SYSPATH) $(VTK_PATH)
+EXTRA_LIB = $(PKG_LIB) $(MPI_LIB) $(FFT_LIB) $(JPG_LIB) $(PKG_SYSLIB) $(VTK_LIB)
 
 # Path to src files
 
