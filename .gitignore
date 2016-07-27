@@ -1,0 +1,5 @@
+*.o
+*.so
+*.a
+Obj_shlib*
+src/Makefile.shlib
