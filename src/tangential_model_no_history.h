@@ -85,7 +85,7 @@ namespace ContactModels
 
       // force normalization
       const double Ft_friction = xmu * fabs(sidata.Fn);
-      const double Ft_damping = sidata.gammat*vrel;     
+      const double Ft_damping = sidata.gammat*vrel;
       double Ft;
 
       if (vrel != 0.0) Ft = min(Ft_friction, Ft_damping) / vrel;

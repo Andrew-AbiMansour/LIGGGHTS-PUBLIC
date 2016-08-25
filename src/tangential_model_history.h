@@ -199,6 +199,7 @@ namespace ContactModels
         i_forces.delta_F[0] += Ft1;
         i_forces.delta_F[1] += Ft2;
         i_forces.delta_F[2] += Ft3;
+
         j_forces.delta_F[0] += -Ft1;
         j_forces.delta_F[1] += -Ft2;
         j_forces.delta_F[2] += -Ft3;

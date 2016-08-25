@@ -240,6 +240,7 @@ namespace ContactModels
         j_forces.delta_F[0] = -fx;
         j_forces.delta_F[1] = -fy;
         j_forces.delta_F[2] = -fz;
+
         #ifdef SUPERQUADRIC_ACTIVE_FLAG
                 if(sidata.is_non_spherical) {
                   //for non-spherical particles normal force can produce torque!
